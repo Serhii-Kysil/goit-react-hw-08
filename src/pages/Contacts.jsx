@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Loader } from "../Components/Loader/Loader";
 import { selectError, selectIsLoading } from "../redux/Contacts/selector";
 import { fetchContacts } from "../redux/Contacts/operations";
+import DocumentTitle from "../Components/DocumentTitle";
 
 const ContactForm = lazy(() => import("../Components/ContactForm/ContactForm"));
 const ContactList = lazy(() => import("../Components/ContactList/ContactList"));
@@ -19,6 +20,7 @@ export default function Contacts() {
   }, [dispatch]);
   return (
     <>
+      <DocumentTitle>Contacts</DocumentTitle>
       <div>
         <Suspense fallback={<Loader />}>
           <h1>Phonebook</h1>
