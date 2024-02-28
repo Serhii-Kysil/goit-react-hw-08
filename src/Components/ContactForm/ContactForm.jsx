@@ -36,7 +36,7 @@ export default function ContactForm() {
       onSubmit={(values, actions) => {
         const newContact = {
           name: values.name.replace(/\b\w/g, (l) => l.toUpperCase()),
-          phone: values.number,
+          number: values.number,
         };
 
         handleAddContact(newContact);

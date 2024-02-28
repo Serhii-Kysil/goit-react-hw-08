@@ -19,7 +19,7 @@ export const Contact = ({ contact }) => {
         </p>
         <p className={css.par}>
           {" "}
-          <FaPhone /> {contact.phone}
+          <FaPhone /> {contact.number}
         </p>
       </div>
       <div className={css.btnCont}>
