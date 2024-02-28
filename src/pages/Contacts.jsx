@@ -1,13 +1,13 @@
 import { lazy, Suspense } from "react";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Loader } from "./Loader/Loader";
+import { Loader } from "../Components/Loader/Loader";
 import { selectError, selectIsLoading } from "../redux/Contacts/selector";
 import { fetchContacts } from "../redux/Contacts/operations";
 
-const ContactForm = lazy(() => import("./ContactForm/ContactForm"));
-const ContactList = lazy(() => import("./ContactList/ContactList"));
-const SearchBox = lazy(() => import("./SearchBox/SearchBox"));
+const ContactForm = lazy(() => import("../Components/ContactForm/ContactForm"));
+const ContactList = lazy(() => import("../Components/ContactList/ContactList"));
+const SearchBox = lazy(() => import("../Components/SearchBox/SearchBox"));
 
 export default function Contacts() {
   const dispatch = useDispatch();
