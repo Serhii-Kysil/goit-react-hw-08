@@ -8,8 +8,6 @@ export default function SearchBox() {
   const handleFilterChange = (event) => {
     dispatch(setFilter(event.target.value));
   };
-  //   const filter = useSelector((state) => state.filters.name);
-
   return (
     <>
       <p className={css.text}>Find contacts by name</p>
