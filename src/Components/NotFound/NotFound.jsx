@@ -18,7 +18,7 @@ export default function NotFound() {
       </div>
       <div>
         <img
-          src="../../../NonFound.png"
+          src="./../../NonFound.png"
           alt="NotFoundImg"
           width={360}
           height={360}
