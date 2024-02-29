@@ -18,7 +18,8 @@ export default function NotFound() {
       </div>
       <div>
         <img
-          src="https://omjsblog.files.wordpress.com/2023/07/errorimg.png"
+          //  src="https://omjsblog.files.wordpress.com/2023/07/errorimg.png"
+          src="/NonFound.png"
           alt="NotFoundImg"
           width={360}
           height={360}
