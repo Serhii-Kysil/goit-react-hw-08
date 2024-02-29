@@ -7,7 +7,7 @@ import { Field, Formik, Form, ErrorMessage } from "formik";
 import { useId } from "react";
 
 const userSchema = Yup.object().shape({
-  username: Yup.string()
+  name: Yup.string()
     .required("Username is required")
     .min(3, "Minimum 8 symbols")
     .max(50, "Maximum 50 characters"),
@@ -33,7 +33,7 @@ export const RegisterForm = () => {
     dispatch(register(newUser))
       .unwrap()
       .then(() => {
-        toast.success("Account successfuly crated");
+        toast.success("Account successfuly created");
       })
       .catch(() => {
         toast.error("Registration error");
