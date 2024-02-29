@@ -2,7 +2,7 @@ import css from "./SearchBox.module.css";
 import { useDispatch } from "react-redux";
 import { setFilter } from "../../redux/filtersSlice";
 
-export default function SearchBox() {
+export function SearchBox() {
   const dispatch = useDispatch();
 
   const handleFilterChange = (event) => {
@@ -10,11 +10,11 @@ export default function SearchBox() {
   };
   return (
     <>
-      <p className={css.text}>Find contacts by name</p>
+      <p className={css.text}>Find contacts</p>
       <input
         className={css.search}
         type="text"
-        placeholder="Search by name"
+        placeholder="Search by name/number"
         onChange={handleFilterChange}
       />
     </>

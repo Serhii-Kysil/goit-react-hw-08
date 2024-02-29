@@ -4,6 +4,7 @@ import { useId } from "react";
 import css from "./ContactForm.module.css";
 import { addContacts } from "../../redux/Contacts/operations";
 import { useDispatch } from "react-redux";
+import toast from "react-hot-toast";
 
 const userSchema = Yup.object().shape({
   name: Yup.string()
@@ -17,14 +18,21 @@ const userSchema = Yup.object().shape({
     .matches(/^\+?[0-9\s-]+$/, "Invalid phone number"),
 });
 
-export default function ContactForm() {
+export function ContactForm() {
   const nameField = useId();
   const numberField = useId();
 
   const dispatch = useDispatch();
 
   const handleAddContact = (newContact) => {
-    dispatch(addContacts(newContact));
+    dispatch(addContacts(newContact))
+      .unwrap()
+      .then(() => {
+        toast.success("Contact has been added");
+      })
+      .catch(() => {
+        toast.error("Creation error, try again");
+      });
   };
 
   return (
@@ -37,7 +45,7 @@ export default function ContactForm() {
       onSubmit={(values, actions) => {
         const newContact = {
           name: values.name.replace(/\b\w/g, (l) => l.toUpperCase()),
-          number: values.number,
+          number: values.number.replace(/(\d{3})(?=\d)/g, "$1-"),
         };
 
         handleAddContact(newContact);
@@ -46,7 +54,9 @@ export default function ContactForm() {
     >
       <Form className={css.form} autoComplete="off">
         <div className={css.formGroup}>
-          <label htmlFor={nameField}>Name</label>
+          <label className={css.label} htmlFor={nameField}>
+            Name
+          </label>
           <Field
             className={css.formFiled}
             type="text"
@@ -56,7 +66,9 @@ export default function ContactForm() {
           <ErrorMessage className={css.error} name="name" component="span" />
         </div>
         <div className={css.formGroup}>
-          <label htmlFor={numberField}>Number</label>
+          <label className={css.label} htmlFor={numberField}>
+            Number
+          </label>
           <Field
             className={css.formFiled}
             type="text"

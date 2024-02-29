@@ -1,5 +1,5 @@
 .listItem {
-  border: 2px solid black;
+  border: 2px solid #003399;
   width: 300px;
   border-radius: 4px;
   margin: 3px;
@@ -15,6 +15,7 @@
 .par {
   display: flex;
   align-items: center;
+  color: #171f44;
   gap: 10px;
 }
 .btnCont {
@@ -23,6 +24,11 @@
   justify-content: center;
 }
 .btn {
-  height: 25px;
-  cursor: pointer;
+  outline-width: 2px;
+  font-weight: 700;
+  border-width: 1.5px;
+  border-color: rgba(25, 118, 210, 1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

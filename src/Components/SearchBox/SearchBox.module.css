@@ -1,9 +1,17 @@
 .search {
   margin-bottom: 20px;
-  border: 1px solid black;
   border-radius: 4px;
+  outline: none;
+  border: 1.8px solid rgba(25, 118, 210, 1);
+
   width: 290px;
+  padding: 7px;
 }
+/* .search::placeholder {
+  color: blue;
+} */
 .text {
   margin-top: 30px;
+  color: rgba(25, 118, 210, 1);
+  font-weight: 600;
 }

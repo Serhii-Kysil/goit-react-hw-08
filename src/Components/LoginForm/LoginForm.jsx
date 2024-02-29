@@ -56,14 +56,24 @@ export const LoginForm = () => {
           <label htmlFor={emailField} className={css.label}>
             Email
           </label>
-          <Field type="email" name="email" id={emailField} />
+          <Field
+            className={css.formFiled}
+            type="email"
+            name="email"
+            id={emailField}
+          />
           <ErrorMessage className={css.error} name="name" component="span" />
         </div>
         <div className={css.formGroup}>
           <label className={css.label} htmlFor={passwordField}>
             Password
           </label>
-          <Field type="password" name="password" id={passwordField} />
+          <Field
+            className={css.formFiled}
+            type="password"
+            name="password"
+            id={passwordField}
+          />
           <ErrorMessage className={css.error} name="number" component="span" />
         </div>
         <div className={css.btnGroup}>
@@ -73,12 +83,5 @@ export const LoginForm = () => {
         </div>
       </Form>
     </Formik>
-
-    //    <label className={css.label}>
-    //      Password
-    //      <input type="password" name="password" />
-    //    </label>
-    //    <button type="submit">Log In</button>
-    //  </form>
   );
 };

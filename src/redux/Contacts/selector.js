@@ -11,8 +11,14 @@ export const selectFilter = (state) => state.filters.name;
 export const selectFilteredContacts = createSelector(
   [selectContacts, selectFilter],
   (contacts, filter) => {
-    return contacts.filter((contact) =>
-      contact.name.toLowerCase().includes(filter.toLowerCase())
-    );
+    return contacts.filter((contact) => {
+      const nameIncludesFilter = contact.name
+        .toLowerCase()
+        .includes(filter.toLowerCase());
+      const phoneIncludesFilter = contact.number
+        .toLowerCase()
+        .includes(filter.toLowerCase());
+      return nameIncludesFilter || phoneIncludesFilter;
+    });
   }
 );

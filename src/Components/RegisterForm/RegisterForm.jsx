@@ -63,21 +63,37 @@ export const RegisterForm = () => {
           <label htmlFor={userNameField} className={css.label}>
             Username
           </label>
-          <Field type="text" name="name" id={userNameField} />
+          <Field
+            className={css.formFiled}
+            type="text"
+            name="name"
+            id={userNameField}
+          />
+
           <ErrorMessage className={css.error} name="name" component="span" />
         </div>
         <div className={css.formGroup}>
           <label htmlFor={emailField} className={css.label}>
             Email
           </label>
-          <Field type="email" name="email" id={emailField} />
+          <Field
+            className={css.formFiled}
+            type="email"
+            name="email"
+            id={emailField}
+          />
           <ErrorMessage className={css.error} name="name" component="span" />
         </div>
         <div className={css.formGroup}>
           <label className={css.label} htmlFor={passwordField}>
             Password
           </label>
-          <Field type="password" name="password" id={passwordField} />
+          <Field
+            className={css.formFiled}
+            type="password"
+            name="password"
+            id={passwordField}
+          />
           <ErrorMessage className={css.error} name="number" component="span" />
         </div>
         <div className={css.btnGroup}>
@@ -87,21 +103,5 @@ export const RegisterForm = () => {
         </div>
       </Form>
     </Formik>
-
-    //  <form className={css.form} onSubmit={handleRegister} autoComplete="off">
-    //    <label className={css.label}>
-    //      Username
-    //      <input type="text" name="name" />
-    //    </label>
-    //    <label className={css.label}>
-    //      Email
-    //      <input type="email" name="email" />
-    //    </label>
-    //    <label className={css.label}>
-    //      Password
-    //      <input type="password" name="password" />
-    //    </label>
-    //    <button type="submit">Register</button>
-    //  </form>
   );
 };
