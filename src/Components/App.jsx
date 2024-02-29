@@ -2,7 +2,7 @@ import { lazy } from "react";
 import { useEffect } from "react";
 import { Route, Routes } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { Toaster } from "react-hot-toast";
+// import { Toaster } from "react-hot-toast";
 import { Layout } from "./Layout";
 import { useAuth } from "../hooks";
 import { refreshUser } from "../redux/auth/operations";
@@ -55,7 +55,6 @@ const App = () => {
           />
         </Route>
       </Routes>
-      <Toaster />
     </>
   );
 };
