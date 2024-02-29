@@ -17,12 +17,7 @@ export default function NotFound() {
         </nav>
       </div>
       <div>
-        <img
-          src="./../../NonFound.png"
-          alt="NotFoundImg"
-          width={360}
-          height={360}
-        />
+        <img src="./NonFound.png" alt="NotFoundImg" width={360} height={360} />
       </div>
     </div>
   );
