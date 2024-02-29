@@ -5,12 +5,20 @@ import { useDispatch } from "react-redux";
 import { deleteContacts } from "../../redux/Contacts/operations";
 import Button from "@mui/material/Button";
 import DeleteIcon from "@mui/icons-material/Delete";
+import toast from "react-hot-toast";
 
 export const Contact = ({ contact }) => {
   const dispatch = useDispatch();
 
   const handleDeleteContact = () => {
-    dispatch(deleteContacts(contact.id));
+    dispatch(deleteContacts(contact.id))
+      .unwrap()
+      .then(() => {
+        toast.success("The contact has been deleted");
+      })
+      .catch(() => {
+        toast.error("Deletion error ");
+      });
   };
 
   return (
